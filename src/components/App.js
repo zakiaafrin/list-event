@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Books from './Books/Books';
-import './App.css';
 
 class App extends Component {
   state = {
@@ -24,7 +23,7 @@ class App extends Component {
   }
 
   deleteHandler = (id) => {
-    let newBooks = this.state.books.filter(book => book.id != id)
+    let newBooks = this.state.books.filter(book => book.id !== id)
     this.setState({
       books: newBooks
     })
@@ -33,7 +32,7 @@ class App extends Component {
   render() {
     return (
       <div className="container py-5">
-        <Books deleteHandler={this.deleteHandler} books={this.state.books} />
+        <Books deleteHandler={this.deleteHandler.bind(this)} books={this.state.books} />
       </div>
     );
   }

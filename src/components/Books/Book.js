@@ -9,7 +9,7 @@ class Book extends Component {
                 <span className='ml-auto'>{this.props.book.price}</span>
                 <div className='mx-4'>
                     <span style={{ cursor: 'pointer', color: 'red' }} onClick={() => this.props.deleteHandler(this.props.book.id)}>
-                        <i class='fas fa-trash-alt'></i>
+                        <i className='fas fa-trash-alt'></i>
                     </span>
                 </div>
             </li>
