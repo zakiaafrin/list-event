@@ -8,7 +8,10 @@ class Books extends Component {
             <div>
                 {this.props.books.map(book => {
                     return (
-                        <Book deleteHandler={this.props.deleteHandler} book={book} />
+                        <Book
+                            editHandler={this.props.editHandler}
+                            deleteHandler={this.props.deleteHandler}
+                            book={book} />
                     )
                 })}
             </div>

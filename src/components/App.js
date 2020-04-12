@@ -22,6 +22,21 @@ class App extends Component {
     ]
   }
 
+  editHandler = (name, id) => {
+    let newBooks = this.state.books.map(book => {
+      if (book.id === id) {
+        return {
+          ...book,
+          name
+        }
+      }
+      return book
+    })
+    this.setState({
+      books: newBooks
+    })
+  }
+
   deleteHandler = (id) => {
     let newBooks = this.state.books.filter(book => book.id !== id)
     this.setState({
@@ -31,9 +46,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container py-5">
-        <Books deleteHandler={this.deleteHandler.bind(this)} books={this.state.books} />
-      </div>
+      <div className="container py-5" >
+        <Books
+          editHandler={this.editHandler.bind(this)}
+          deleteHandler={this.deleteHandler.bind(this)}
+          books={this.state.books} />
+      </div >
     );
   }
 }
